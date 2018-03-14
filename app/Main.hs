@@ -44,7 +44,6 @@ tw = Tweet <$>  dbh <*>
                            metavar "PATH" <>
                            help "path to creds file")
 
-
 main :: IO ()
 main = customExecParser p opts >>= runWithOpts
   where parser = subparser
@@ -56,4 +55,3 @@ main = customExecParser p opts >>= runWithOpts
           )
         opts = info (parser <**> helper) idm
         p = prefs showHelpOnError
-
